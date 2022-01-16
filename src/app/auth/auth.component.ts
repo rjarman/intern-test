@@ -21,6 +21,7 @@ export class AuthComponent implements OnInit, AfterViewInit {
   loginForm: FormGroup;
   forgetForm: FormGroup;
   private passElement: HTMLInputElement;
+  progressBarValid = false;
 
   constructor(
     private authService: ServerService,
@@ -29,6 +30,11 @@ export class AuthComponent implements OnInit, AfterViewInit {
     private titleService: Title
   ) {
     this.titleService.setTitle('ACP | Login');
+    this.authService.isServerSentData.subscribe((status) => {
+      if (status) {
+        this.progressBarValid = true;
+      }
+    });
   }
 
   ngAfterViewInit(): void {

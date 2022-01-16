@@ -2,12 +2,15 @@ import { Injectable } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
+import { Subject } from 'rxjs';
 import { FORM_CRED } from './config';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ServerService {
+  isServerSentData = new Subject<boolean>();
+
   constructor(private router: Router, private cookieService: CookieService) {}
 
   isUserLogin(): boolean {
@@ -31,8 +34,11 @@ export class ServerService {
       this.cookieService.deleteAll();
       this.cookieService.set('_isUserLogin', 'true');
       this.cookieService.set('email', loginForm.value.email);
-      this.router.navigateByUrl('/');
-      return true;
+      this.isServerSentData.next(true);
+      setTimeout(() => {
+        this.router.navigateByUrl('/');
+        return true;
+      }, 1000);
     }
     return false;
   }
