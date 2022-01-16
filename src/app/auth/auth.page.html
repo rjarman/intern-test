@@ -1,0 +1,147 @@
+<div class="container">
+  <div class="cov-img">
+    <div>
+      <div class="cov-logo">
+        <img src="../../assets/acp_logo_v2.png" alt="acp logo" />
+      </div>
+      <div class="cov-txt">
+        <p>Auditing and Certification Platform</p>
+        <p>
+          Standardization & Innovation Brought to Auditing, Certification &
+          Inspection Bodies Worldwide
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="form-wrapper">
+    <div class="form-logo">
+      <img src="../../assets/ACP_Logo.png" alt="form logo" />
+    </div>
+    <div class="form-txt" *ngIf="!isClicked">LOGIN</div>
+    <div class="form-txt-fgt" *ngIf="isClicked">
+      <p>Please enter your email address.</p>
+    </div>
+    <form [formGroup]="loginForm" (ngSubmit)="login()" *ngIf="!isClicked">
+      <mat-form-field appearance="outline" class="em-out">
+        <mat-label class="form-label">Email</mat-label>
+        <input
+          matInput
+          formControlName="email"
+          type="email"
+          placeholder="Email"
+          required
+        />
+        <mat-hint
+          class="mat-hint-em"
+          *ngIf="loginForm.controls.email.invalid && loginForm.controls.email.dirty"
+          >Enter a valid email</mat-hint
+        >
+        <mat-hint
+          class="mat-hint-em"
+          *ngIf="loginForm.controls.email.errors?.required && loginForm.controls.email.touched"
+          >This field is required</mat-hint
+        >
+      </mat-form-field>
+      <div class="form-gaper"></div>
+      <mat-form-field appearance="outline">
+        <mat-label class="form-label">Password</mat-label>
+        <input
+          id="password"
+          matInput
+          formControlName="password"
+          type="password"
+          placeholder="Password"
+          required
+        />
+        <mat-icon matSuffix class="pass-vi" id="showPass">visibility</mat-icon>
+        <mat-hint [hidden]="isValidPass" class="mat-hint-pass"
+          >Wrong email or password.</mat-hint
+        >
+      </mat-form-field>
+      <div class="form-btn" *ngIf="isValidPass; else invalidPass">
+        <a (click)="toggleForm()">Forgot Password?</a>
+        <button
+          mat-raised-button
+          color="primary"
+          type="submit"
+          [disabled]="!loginForm.valid"
+        >
+          LOGIN
+        </button>
+      </div>
+      <ng-template #invalidPass>
+        <div class="form-btn" style="margin-top: 18px">
+          <a (click)="toggleForm()">Forgot Password?</a>
+          <button
+            mat-raised-button
+            color="primary"
+            type="submit"
+            [disabled]="!loginForm.valid"
+          >
+            LOGIN
+          </button>
+        </div>
+      </ng-template>
+    </form>
+    <form
+      class="fgt"
+      [formGroup]="forgetForm"
+      (ngSubmit)="forget()"
+      *ngIf="isClicked"
+    >
+      <mat-form-field appearance="outline" class="em-out">
+        <mat-label class="form-label">Email</mat-label>
+        <input
+          matInput
+          formControlName="fgt_email"
+          placeholder="Email"
+          type="email"
+          required
+        />
+        <mat-hint
+          class="mat-hint-em"
+          *ngIf="forgetForm.controls.fgt_email.invalid && forgetForm.controls.fgt_email.dirty"
+          >Enter a valid email</mat-hint
+        >
+        <mat-hint
+          class="mat-hint-em"
+          *ngIf="forgetForm.controls.fgt_email.errors?.required && forgetForm.controls.fgt_email.touched"
+          >This field is required</mat-hint
+        >
+      </mat-form-field>
+      <div class="fgt-cap">
+        <div>
+          <img src="../../assets/captcha.png" alt="captcha" />
+        </div>
+        <a>
+          <mat-icon matSuffix>refresh</mat-icon>
+        </a>
+      </div>
+      <mat-form-field appearance="outline" class="em-out fgt-cap">
+        <mat-label class="form-label">Captcha</mat-label>
+        <input
+          matInput
+          formControlName="captcha"
+          placeholder="Captcha"
+          required
+        />
+        <mat-hint
+          class="mat-hint-em"
+          *ngIf="forgetForm.controls.captcha.errors?.required && forgetForm.controls.captcha.touched"
+          >This field is required</mat-hint
+        >
+      </mat-form-field>
+      <div class="form-btn-fgt">
+        <button
+          mat-raised-button
+          color="primary"
+          type="submit"
+          [disabled]="!forgetForm.valid"
+        >
+          RESET MY PASSWORD
+        </button>
+        <a (click)="toggleForm()">Login</a>
+      </div>
+    </form>
+  </div>
+</div>
