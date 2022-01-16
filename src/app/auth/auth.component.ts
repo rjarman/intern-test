@@ -24,13 +24,13 @@ export class AuthComponent implements OnInit, AfterViewInit {
   progressBarValid = false;
 
   constructor(
-    private authService: ServerService,
+    private serverService: ServerService,
     private formBuilder: FormBuilder,
     private location: Location,
     private titleService: Title
   ) {
     this.titleService.setTitle('ACP | Login');
-    this.authService.isServerSentData.subscribe((status) => {
+    this.serverService.isServerSentData.subscribe((status) => {
       if (status) {
         this.progressBarValid = true;
       }
@@ -71,11 +71,11 @@ export class AuthComponent implements OnInit, AfterViewInit {
   }
 
   forget(): void {
-    this.authService.forget(this.forgetForm);
+    this.serverService.forget(this.forgetForm);
   }
 
   login(): void {
-    this.isValidPass = this.authService.login(this.loginForm);
+    this.isValidPass = this.serverService.login(this.loginForm);
   }
 
   toggleForm(): void {
