@@ -1,0 +1,131 @@
+[class^="btn-ripple"] {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  text-align: center;
+  line-height: 300px;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-tap-highlight-color: transparent;
+  position: relative;
+  z-index: 1;
+  border: none;
+  background: inherit;
+  > div {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    transition: opacity 0.2s cubic-bezier(0.35, 0, 0.25, 1),
+      background-color 0.2s cubic-bezier(0.35, 0, 0.25, 1);
+  }
+  > mat-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.dia-up {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+}
+
+.dia-dow {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+
+  > .dia-img {
+    width: 150px;
+    padding-bottom: 30px;
+    margin-bottom: 12px;
+    > img {
+      width: 100%;
+    }
+  }
+
+  p {
+    text-align: center;
+    font-family: Poppins, sans-serif;
+    font-weight: 400;
+    margin: 0;
+  }
+
+  > .dia-desc {
+    padding: 80px 0;
+    position: relative;
+  }
+
+  > .dia-desc p {
+    font-size: 16px;
+    font-weight: 100;
+  }
+}
+
+.dia-name p:first-child {
+  color: #5b2b14;
+  line-height: 28px;
+  font-size: 28px;
+}
+
+.dia-name p:last-child {
+  color: #999;
+  font-size: 10px;
+  line-height: 1.4;
+}
+
+.dia-desc p:first-child {
+  line-height: 16px;
+  margin-bottom: 12px;
+}
+
+.dia-desc p:last-child {
+  padding-top: 12px;
+  > a {
+    color: #addaff;
+    text-decoration: none;
+  }
+}
+
+.dia-desc p:last-child > a:hover,
+.dia-desc p:last-child > a:active,
+.dia-desc p:last-child > a:focus {
+  text-decoration: underline;
+  color: #753f21;
+}
+
+.dia-desc::before {
+  position: absolute;
+  content: "x";
+  color: #ddd;
+  top: 46%;
+  font-size: 16px;
+  line-height: 16px;
+  left: 50%;
+}
+
+.dia-hr::before {
+  position: absolute;
+  content: "";
+  background: #ddd;
+  height: 1px;
+  width: 80px;
+  left: 87px;
+}
+
+.dia-hr::after {
+  position: absolute;
+  content: "";
+  background: #ddd;
+  height: 1px;
+  width: 80px;
+  right: 80px;
+}
