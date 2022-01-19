@@ -39,3 +39,23 @@ body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
+div.container2 {
+  padding-left: 64px;
+  background: #fafafa;
+  height: 100%;
+  > .main-body {
+    height: calc(100% - 65px);
+    margin-left: 0;
+    margin-top: 1px;
+    background-color: #f2f2f2;
+  }
+}
+
+.main-body {
+  padding: 24px;
+}
+
+.main-body.sm {
+  margin-left: 216px !important;
+}

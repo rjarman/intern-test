@@ -17,6 +17,8 @@ import {
 } from '@angular/material/core';
 import { DetailsComponent } from './details/details.component';
 import { UpdateComponent } from './update/update.component';
+import { HeaderComponent } from './header/header.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 @NgModule({
   imports: [
@@ -38,6 +40,8 @@ import { UpdateComponent } from './update/update.component';
     AboutComponent,
     DetailsComponent,
     UpdateComponent,
+    HeaderComponent,
+    SidebarComponent,
   ],
   providers: [
     {

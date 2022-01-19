@@ -1,0 +1,66 @@
+<nav class="container1">
+  <mat-toolbar>
+    <div class="nav-upper">
+      <div class="nav-btns">
+        <button
+          mat-button
+          [matMenuTriggerFor]="headerMenu"
+          mat-icon-button
+          class="arrow-btn"
+          aria-haspopup="true"
+          (click)="activeMenu()"
+        >
+          <div class="sidebar-ic">I</div>
+          <div class="nav-name">
+            <p>Intern Exam</p>
+          </div>
+          <button mat-icon-button class="btn-ripple">
+            <mat-icon role="img">keyboard_arrow_down</mat-icon>
+            <div
+              matRipple
+              [matRippleCentered]="'true'"
+              [matRippleRadius]="20"
+              [matRippleColor]="'#005ba91c'"
+            ></div>
+          </button>
+        </button>
+        <button mat-icon-button class="btn-ripple-menu" (click)="activeMenu()">
+          <mat-icon role="img">menu</mat-icon>
+          <div
+            matRipple
+            [matRippleCentered]="'true'"
+            [matRippleRadius]="20"
+            [matRippleColor]="'#005ba91c'"
+          ></div>
+        </button>
+      </div>
+    </div>
+  </mat-toolbar>
+  <div class="nav-lower">
+    <div>
+      <mat-icon role="img">assignment</mat-icon>
+      <a [routerLink]="['/question-builder']">Form</a>
+    </div>
+  </div>
+</nav>
+<mat-menu
+  yPosition="below"
+  #headerMenu="matMenu"
+  class="mat-menu-c"
+  style="min-width: 190px"
+>
+  <ng-template matMenuContent>
+    <button mat-menu-item routerLink="/question-builder">
+      <mat-icon role="img">account_circle</mat-icon>
+      <span>My Account</span>
+    </button>
+    <button mat-menu-item mat-raised-button (click)="openDialog()">
+      <mat-icon role="img">info</mat-icon>
+      <span>About</span>
+    </button>
+    <button mat-menu-item (click)="logout()">
+      <mat-icon role="img">exit_to_app</mat-icon>
+      <span>Logout</span>
+    </button>
+  </ng-template>
+</mat-menu>

@@ -1,0 +1,34 @@
+.head-con {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 1px -1px rgb(0 0 0 / 20%), 0 1px 1px 0 rgb(0 0 0 / 14%),
+    0 1px 3px 0 rgb(0 0 0 / 12%);
+  > .hr-line {
+    height: 64px;
+    width: 1px;
+    background: rgba(0, 0, 0, 0.12);
+    position: relative;
+  }
+}
+
+.head-con > mat-toolbar {
+  background: white !important;
+}
+
+.header {
+  height: 64px;
+}
+
+.header-logo {
+  width: 187px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  background-color: white;
+  > img {
+    height: 34px;
+    width: 90px;
+  }
+}

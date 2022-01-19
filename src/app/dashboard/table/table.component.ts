@@ -1,7 +1,5 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { MatDialog } from '@angular/material/dialog';
-import { AboutComponent } from '../about/about.component';
 import { ServerService } from 'src/app/server.service';
 
 interface Table {
@@ -24,51 +22,15 @@ interface Pager {
   styleUrls: ['./table.component.scss'],
 })
 export class TableComponent implements OnInit, AfterViewInit {
-  private container1: HTMLElement;
-  private mainBody: HTMLElement;
   private tabC2H: HTMLElement;
   private pageNo: HTMLCollectionOf<HTMLDataListElement>;
   private pagerBtn: HTMLCollectionOf<HTMLDataListElement>;
-  private isMenuClicked = false;
   data: Table[];
   slicedData: Table[];
   pager: Pager;
 
-  static expandSide(): void {
-    const navLower = document.getElementsByClassName(
-      'nav-lower'
-    )[0] as HTMLElement;
-
-    const navUpper = document.getElementsByClassName(
-      'nav-upper'
-    )[0] as HTMLElement;
-    const container1 = document.getElementsByClassName(
-      'container1'
-    )[0] as HTMLElement;
-    navLower.classList.remove('sm');
-    navUpper.classList.remove('sm');
-    container1.classList.remove('sm');
-  }
-
-  static shrinkSide(): void {
-    const navLower = document.getElementsByClassName(
-      'nav-lower'
-    )[0] as HTMLElement;
-
-    const navUpper = document.getElementsByClassName(
-      'nav-upper'
-    )[0] as HTMLElement;
-    const container1 = document.getElementsByClassName(
-      'container1'
-    )[0] as HTMLElement;
-    navLower.classList.add('sm');
-    navUpper.classList.add('sm');
-    container1.classList.add('sm');
-  }
-
   constructor(
     private titleService: Title,
-    private dialog: MatDialog,
     private serverService: ServerService
   ) {
     this.titleService.setTitle('ACP | Form');
@@ -88,12 +50,6 @@ export class TableComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    this.container1 = document.getElementsByClassName(
-      'container1'
-    )[0] as HTMLElement;
-    this.mainBody = document.getElementsByClassName(
-      'main-body'
-    )[0] as HTMLElement;
     this.tabC2H = document.getElementsByClassName(
       'tab-c-2-h'
     )[0] as HTMLElement;
@@ -110,32 +66,6 @@ export class TableComponent implements OnInit, AfterViewInit {
     }
     this.pagerBtn[0].classList.add('disabled');
     this.pagerBtn[1].classList.add('disabled');
-  }
-
-  private addListeners(): void {
-    this.container1.addEventListener(
-      'mouseover',
-      TableComponent.expandSide,
-      true
-    );
-    this.container1.addEventListener(
-      'mouseleave',
-      TableComponent.shrinkSide,
-      true
-    );
-  }
-
-  private removeListeners(): void {
-    this.container1.removeEventListener(
-      'mouseover',
-      TableComponent.expandSide,
-      true
-    );
-    this.container1.removeEventListener(
-      'mouseleave',
-      TableComponent.shrinkSide,
-      true
-    );
   }
 
   private sortBy(
@@ -324,28 +254,5 @@ export class TableComponent implements OnInit, AfterViewInit {
     this.togglePageNo({ pagePointer: this.pager.inc });
     this.togglePagerBtn();
     this.updateSlicedData();
-  }
-
-  activeMenu(): void {
-    this.isMenuClicked = this.isMenuClicked ? false : true;
-    if (this.isMenuClicked) {
-      TableComponent.shrinkSide();
-      this.mainBody.classList.remove('sm');
-      this.addListeners();
-    } else {
-      this.removeListeners();
-      TableComponent.expandSide();
-      this.mainBody.classList.add('sm');
-    }
-  }
-
-  openDialog(): void {
-    this.dialog.open(AboutComponent, {
-      width: '720px',
-    });
-  }
-
-  logout(): void {
-    this.serverService.logout();
   }
 }
