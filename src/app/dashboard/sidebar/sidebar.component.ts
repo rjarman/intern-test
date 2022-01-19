@@ -1,5 +1,4 @@
 import { Component, AfterViewInit } from '@angular/core';
-import { Title } from '@angular/platform-browser';
 import { MatDialog } from '@angular/material/dialog';
 import { AboutComponent } from '../about/about.component';
 import { ServerService } from '../../server.service';
@@ -47,12 +46,9 @@ export class SidebarComponent implements AfterViewInit {
   }
 
   constructor(
-    private titleService: Title,
     private dialog: MatDialog,
     private serverService: ServerService
-  ) {
-    this.titleService.setTitle('ACP | Form');
-  }
+  ) {}
 
   ngAfterViewInit(): void {
     this.container1 = document.getElementsByClassName(
