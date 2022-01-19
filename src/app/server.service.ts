@@ -3,7 +3,15 @@ import { FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { Subject } from 'rxjs';
-import { FORM_CRED } from './config';
+import { FORM_CRED, DATABASE } from './config';
+import {
+  MultipleChoice,
+  LinearScale,
+  Checkbox,
+  ShortText,
+  FileUpload,
+  Database,
+} from './type';
 
 @Injectable({
   providedIn: 'root',
@@ -46,5 +54,11 @@ export class ServerService {
   logout(): void {
     this.cookieService.deleteAll();
     this.router.navigateByUrl('/login');
+  }
+
+  fetch(): Database<
+    MultipleChoice | LinearScale | Checkbox | ShortText | FileUpload
+  >[] {
+    return DATABASE;
   }
 }
