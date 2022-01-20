@@ -23,6 +23,7 @@ nav.container1 {
   box-shadow: 0 2px 8px 0 rgb(0 0 0 / 35%);
   background-color: white;
   overflow: hidden;
+  z-index: 10;
   > mat-toolbar {
     background-color: white;
     box-shadow: 0 2px 1px -1px rgb(0 0 0 / 20%), 0 1px 1px 0 rgb(0 0 0 / 14%),
