@@ -19,6 +19,7 @@ import { DetailsComponent } from './details/details.component';
 import { UpdateComponent } from './update/update.component';
 import { HeaderComponent } from './header/header.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 import { CardsComponent } from './cards/cards.component';
 
 @NgModule({
@@ -43,6 +44,7 @@ import { CardsComponent } from './cards/cards.component';
     UpdateComponent,
     HeaderComponent,
     SidebarComponent,
+    BreadcrumbComponent,
     CardsComponent,
   ],
   providers: [

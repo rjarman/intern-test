@@ -1,0 +1,13 @@
+<div class="bread-con">
+  <ul>
+    <li *ngFor="let bName of breadName" class="breadBtn">
+      <a routerLink="{{ breadPathMap[bName] }}">{{ bName }}</a>
+      <span class="arrow"></span>
+    </li>
+    <li>
+      <span>
+        {{ lastBread }}
+      </span>
+    </li>
+  </ul>
+</div>
