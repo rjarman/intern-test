@@ -1,1 +1,65 @@
-<p>create works!</p>
+<app-sidebar></app-sidebar>
+<div class="container2">
+  <app-header></app-header>
+  <div class="main-body sm">
+    <div class="mb-con">
+      <h1>Add Form</h1>
+      <div class="mb-form">
+        <div>
+          <form
+            class="mb-form-d"
+            [formGroup]="questionForm"
+            (ngSubmit)="save()"
+          >
+            <div class="form1">
+              <mat-form-field appearance="fill">
+                <input
+                  matInput
+                  placeholder="Title"
+                  type="email"
+                  formControlName="title"
+                  required
+                />
+              </mat-form-field>
+              <mat-form-field appearance="fill" class="fd">
+                <textarea
+                  matInput
+                  placeholder="Form Description"
+                  formControlName="desc"
+                  type="text"
+                  id="formDesc"
+                  cdkTextareaAutosize
+                  #autosize="cdkTextareaAutosize"
+                  cdkAutosizeMinRows="1"
+                  maxlength="200"
+                ></textarea>
+              </mat-form-field>
+              <div class="mb-form-counter">
+                <span>Character left {{ charLeft }}</span>
+              </div>
+            </div>
+          </form>
+          <div class="form-btns">
+            <button
+              mat-raised-button
+              matRipple
+              routerLink="/question-builder"
+              class="fbtn-discard"
+            >
+              Discard
+            </button>
+            <button
+              mat-raised-button
+              matRipple
+              color="primary"
+              type="submit"
+              class="save-btn"
+            >
+              Save Form
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
