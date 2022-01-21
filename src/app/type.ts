@@ -23,7 +23,6 @@ export interface Checkbox {
 
 export interface ShortText {
   question: string;
-  text: string;
 }
 
 export interface FileUpload {
@@ -37,5 +36,6 @@ export interface Database<T> {
   title: string;
   description: string;
   date: string;
+  updateDate?: string;
   question: T;
 }

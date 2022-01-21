@@ -62,7 +62,6 @@ export const DATABASE: Database<
     date: '17-5-21',
     question: {
       question: 'ksdbckbckascb',
-      text: 'khhbsdkb',
     },
   },
   {
@@ -94,7 +93,6 @@ export const DATABASE: Database<
     date: '17-5-21',
     question: {
       question: 'ksdbckbckascb',
-      text: 'khhbsdkb',
     },
   },
   {
@@ -126,7 +124,6 @@ export const DATABASE: Database<
     date: '17-5-21',
     question: {
       question: 'ksdbckbckascb',
-      text: 'khhbsdkb',
     },
   },
   {
@@ -147,7 +144,6 @@ export const DATABASE: Database<
     date: '17-5-21',
     question: {
       question: 'ksdbckbckascb',
-      text: 'khhbsdkb',
     },
   },
   {
@@ -179,7 +175,6 @@ export const DATABASE: Database<
     date: '17-5-21',
     question: {
       question: 'ksdbckbckascb',
-      text: 'khhbsdkb',
     },
   },
   {
@@ -211,7 +206,6 @@ export const DATABASE: Database<
     date: '17-5-21',
     question: {
       question: 'ksdbckbckascb',
-      text: 'khhbsdkb',
     },
   },
   {
@@ -243,7 +237,6 @@ export const DATABASE: Database<
     date: '17-5-21',
     question: {
       question: 'ksdbckbckascb',
-      text: 'khhbsdkb',
     },
   },
   {
@@ -313,7 +306,6 @@ export const DATABASE: Database<
     date: '17-5-21',
     question: {
       question: 'ksdbckbckascb',
-      text: 'khhbsdkb',
     },
   },
   {
@@ -345,7 +337,6 @@ export const DATABASE: Database<
     date: '17-5-21',
     question: {
       question: 'ksdbckbckascb',
-      text: 'khhbsdkb',
     },
   },
   {
@@ -377,7 +368,6 @@ export const DATABASE: Database<
     date: '17-5-21',
     question: {
       question: 'ksdbckbckascb',
-      text: 'khhbsdkb',
     },
   },
   {
@@ -398,7 +388,6 @@ export const DATABASE: Database<
     date: '17-5-21',
     question: {
       question: 'ksdbckbckascb',
-      text: 'khhbsdkb',
     },
   },
   {
@@ -430,7 +419,6 @@ export const DATABASE: Database<
     date: '17-5-21',
     question: {
       question: 'ksdbckbckascb',
-      text: 'khhbsdkb',
     },
   },
   {
@@ -462,7 +450,6 @@ export const DATABASE: Database<
     date: '17-5-21',
     question: {
       question: 'ksdbckbckascb',
-      text: 'khhbsdkb',
     },
   },
   {
@@ -494,7 +481,6 @@ export const DATABASE: Database<
     date: '17-5-21',
     question: {
       question: 'ksdbckbckascb',
-      text: 'khhbsdkb',
     },
   },
   {
@@ -564,7 +550,6 @@ export const DATABASE: Database<
     date: '17-5-21',
     question: {
       question: 'ksdbckbckascb',
-      text: 'khhbsdkb',
     },
   },
   {
@@ -596,7 +581,6 @@ export const DATABASE: Database<
     date: '17-5-21',
     question: {
       question: 'ksdbckbckascb',
-      text: 'khhbsdkb',
     },
   },
   {
@@ -628,7 +612,6 @@ export const DATABASE: Database<
     date: '17-5-21',
     question: {
       question: 'ksdbckbckascb',
-      text: 'khhbsdkb',
     },
   },
   {
@@ -649,7 +632,6 @@ export const DATABASE: Database<
     date: '17-5-21',
     question: {
       question: 'ksdbckbckascb',
-      text: 'khhbsdkb',
     },
   },
   {
@@ -681,7 +663,6 @@ export const DATABASE: Database<
     date: '17-5-21',
     question: {
       question: 'ksdbckbckascb',
-      text: 'khhbsdkb',
     },
   },
   {
@@ -713,7 +694,6 @@ export const DATABASE: Database<
     date: '17-5-21',
     question: {
       question: 'ksdbckbckascb',
-      text: 'khhbsdkb',
     },
   },
   {
@@ -745,7 +725,6 @@ export const DATABASE: Database<
     date: '17-5-21',
     question: {
       question: 'ksdbckbckascb',
-      text: 'khhbsdkb',
     },
   },
   {
@@ -815,7 +794,6 @@ export const DATABASE: Database<
     date: '17-5-21',
     question: {
       question: 'ksdbckbckascb',
-      text: 'khhbsdkb',
     },
   },
   {
@@ -847,7 +825,6 @@ export const DATABASE: Database<
     date: '17-5-21',
     question: {
       question: 'ksdbckbckascb',
-      text: 'khhbsdkb',
     },
   },
   {
@@ -879,7 +856,6 @@ export const DATABASE: Database<
     date: '17-5-21',
     question: {
       question: 'ksdbckbckascb',
-      text: 'khhbsdkb',
     },
   },
   {
@@ -900,7 +876,6 @@ export const DATABASE: Database<
     date: '17-5-21',
     question: {
       question: 'ksdbckbckascb',
-      text: 'khhbsdkb',
     },
   },
   {
@@ -932,7 +907,6 @@ export const DATABASE: Database<
     date: '17-5-21',
     question: {
       question: 'ksdbckbckascb',
-      text: 'khhbsdkb',
     },
   },
   {
@@ -964,7 +938,6 @@ export const DATABASE: Database<
     date: '17-5-21',
     question: {
       question: 'ksdbckbckascb',
-      text: 'khhbsdkb',
     },
   },
   {
@@ -996,7 +969,6 @@ export const DATABASE: Database<
     date: '17-5-21',
     question: {
       question: 'ksdbckbckascb',
-      text: 'khhbsdkb',
     },
   },
   {
