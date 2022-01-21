@@ -1,1 +1,70 @@
-<p>details works!</p>
+<app-sidebar></app-sidebar>
+<div class="container2">
+  <app-header></app-header>
+  <div class="main-body sm">
+    <app-breadcrumb
+      [id]="shortTextData.id"
+      [breadName]="'Form Details'"
+    ></app-breadcrumb>
+    <div class="mb-con mb-con-details">
+      <div class="mb-con-details-div">
+        <button
+          matRipple
+          [matRippleCentered]="'true'"
+          [matRippleRadius]="20"
+          routerLink="/question-builder"
+        >
+          <mat-icon role="img">arrow_back</mat-icon>
+        </button>
+        <h1>{{ shortTextData.title }}</h1>
+      </div>
+      <div class="mb-form">
+        <div>
+          <form class="mb-form-d">
+            <div class="form1">
+              <div class="form-title">
+                <h1>{{ shortTextData.title }}</h1>
+                <button
+                  matRipple
+                  [matRippleCentered]="'true'"
+                  [matRippleRadius]="20"
+                  [matRippleColor]="'#005ba91c'"
+                  routerLink="/question-builder/{{ id }}/update"
+                >
+                  <mat-icon role="img">edit</mat-icon>
+                </button>
+              </div>
+              <p>{{ shortTextData.description }}</p>
+            </div>
+            <div class="form-date">
+              <div class="date-created">
+                <p>Created</p>
+                <p>{{ shortTextData.date }}</p>
+              </div>
+              <div class="date-updated">
+                <p>Last Updated</p>
+                <p>{{ shortTextData.updateDate }}</p>
+              </div>
+            </div>
+          </form>
+          <form class="mb-form-d mb-form-details">
+            <div class="form1 f1-details">
+              <div class="form-title f-details">
+                <h1>{{ shortTextData.question.question }}</h1>
+              </div>
+              <mat-form-field appearance="standard" class="short-text">
+                <input
+                  matInput
+                  type="text"
+                  placeholder="SHORT ANSWER TEXT"
+                  disabled
+                  required
+                />
+              </mat-form-field>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

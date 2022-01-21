@@ -1,1 +1,87 @@
-<div class="form2"></div>
+<div class="form2">
+  <div>
+    <div class="f2-checkbox">
+      <div class="q-header">
+        <form [formGroup]="shortTextForm">
+          <mat-form-field class="question" appearance="fill">
+            <mat-label class="form-label">Question</mat-label>
+            <input
+              matInput
+              type="text"
+              placeholder="Question"
+              formControlName="question"
+              (input)="emit()"
+              required
+            />
+            <mat-hint
+              *ngIf="
+                shortTextForm.controls.question.errors?.required &&
+                shortTextForm.controls.question.touched
+              "
+              >required</mat-hint
+            >
+          </mat-form-field>
+        </form>
+        <mat-form-field class="qtype" appearance="outline">
+          <mat-label>Question Type</mat-label>
+          <mat-select [(value)]="selectedType" required>
+            <mat-option value="multipleChoice">Multiple Choice</mat-option>
+            <mat-option value="linearScale">Linear Scale</mat-option>
+            <mat-option value="checkbox">Checkbox</mat-option>
+            <mat-option value="shortText">Short Text</mat-option>
+            <mat-option value="fileUpload">File Upload</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <mat-form-field appearance="standard" class="short-text">
+        <input
+          matInput
+          type="text"
+          placeholder="Short Answer Text"
+          disabled
+          required
+        />
+      </mat-form-field>
+      <div class="q-footer">
+        <div>
+          <button
+            matRipple
+            [matRippleCentered]="'true'"
+            [matRippleRadius]="20"
+            [matRippleColor]="'#005ba91c'"
+            [disabled]="!isCopyEn"
+          >
+            <mat-icon role="img" id="copy" [ngClass]="{ active: isCopyEn }"
+              >content_copy</mat-icon
+            >
+          </button>
+          <button
+            matRipple
+            [matRippleCentered]="'true'"
+            [matRippleRadius]="20"
+            [matRippleColor]="'#005ba91c'"
+            [disabled]="!isDeleteEn"
+          >
+            <mat-icon role="img" id="delete" [ngClass]="{ active: isDeleteEn }"
+              >delete</mat-icon
+            >
+          </button>
+        </div>
+      </div>
+      <div class="float-btn" id="fbtn">
+        <button
+          matRipple
+          [matRippleCentered]="'true'"
+          [matRippleRadius]="20"
+          [matRippleColor]="'#005ba91c'"
+          [disabled]="!isAdd"
+          [ngClass]="{ disabled: !isAdd }"
+        >
+          <mat-icon role="img" id="delete" [ngClass]="{ active: isDeleteEn }"
+            >add_circle</mat-icon
+          >
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

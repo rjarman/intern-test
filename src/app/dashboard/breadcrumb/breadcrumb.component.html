@@ -1,12 +1,23 @@
 <div class="bread-con">
   <ul>
-    <li *ngFor="let bName of breadName" class="breadBtn">
-      <a routerLink="{{ breadPathMap[bName] }}">{{ bName }}</a>
+    <li class="breadBtn">
+      <a routerLink="/question-builder">Form</a>
+      <span class="arrow"></span>
+    </li>
+    <li class="breadBtn">
+      <a routerLink="{{ pathName }}" *ngIf="isActive; else isActiveTemp">{{
+        title
+      }}</a>
+      <ng-template #isActiveTemp>
+        <span>
+          {{ title }}
+        </span>
+      </ng-template>
       <span class="arrow"></span>
     </li>
     <li>
       <span>
-        {{ lastBread }}
+        {{ breadName }}
       </span>
     </li>
   </ul>

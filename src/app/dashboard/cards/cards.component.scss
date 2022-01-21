@@ -1,0 +1,236 @@
+.form2 > div {
+  position: relative;
+}
+
+button {
+  border: none;
+  background: #fff;
+  cursor: pointer;
+}
+
+[class^="f2"] {
+  border: 1px solid rgb(216, 216, 216);
+  border-radius: 4px;
+  border-left: 5px solid #fec44d;
+  margin-top: 16px;
+  background-color: white;
+  padding: 24px;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.q-header {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  > form {
+    width: 100%;
+  }
+  mat-form-field {
+    width: 100%;
+    max-width: 30%;
+  }
+  mat-form-field.question {
+    max-width: 85%;
+    margin-right: 24px;
+  }
+}
+
+.mat-form-field {
+  flex: 1 1 100%;
+  box-sizing: border-box;
+  max-height: 100%;
+  ::ng-deep.mat-form-field-wrapper {
+    padding-bottom: 1.34375em !important;
+  }
+  ::ng-deep.mat-form-field-flex {
+    padding-top: 12px !important;
+    background-color: #fff !important;
+  }
+  ::ng-deep.mat-form-field-infix {
+    display: block !important;
+    height: auto !important;
+    padding: 0.5em 0 !important;
+    border-top: 0.84375em solid transparent !important;
+  }
+
+  ::ng-deep.mat-form-field-subscript-wrapper {
+    min-height: 15px !important;
+    bottom: 0 !important;
+    margin-top: 0.85em !important;
+    padding: 0 !important;
+  }
+  input {
+    height: 20px;
+    min-height: 20px;
+    resize: none;
+    word-break: break-word;
+    overflow: hidden;
+  }
+  input.expand {
+    min-height: 20px;
+    height: 40px !important;
+  }
+}
+
+mat-checkbox {
+  cursor: default;
+  ::ng-deep.mat-ripple.mat-checkbox-ripple.mat-focus-indicator {
+    display: none !important;
+  }
+  ::ng-deep.mat-checkbox-background {
+    display: none;
+  }
+  ::ng-deep.mat-checkbox-label {
+    cursor: text;
+  }
+}
+
+.q-footer {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  align-items: center;
+  button {
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border: none;
+    outline: none;
+  }
+  mat-icon {
+    vertical-align: middle;
+    line-height: 24px;
+    color: rgba(0, 0, 0, 0.26);
+  }
+}
+
+#copy.active,
+#delete.active {
+  cursor: pointer;
+  color: #005ba9;
+}
+
+.float-btn {
+  box-shadow: 0 2px 1px -1px rgb(0 0 0 / 20%), 0 1px 1px 0 rgb(0 0 0 / 14%),
+    0 1px 3px 0 rgb(0 0 0 / 12%);
+  place-content: center;
+  align-items: center;
+  flex-direction: row;
+  box-sizing: border-box;
+  display: flex;
+  height: 48px;
+  width: 48px;
+  background: #fff;
+  position: absolute;
+  left: calc(100% + 18px) !important;
+  top: 0;
+  transition: all 0.5s ease;
+  > button {
+    height: 100%;
+    width: 100%;
+    color: #005ba9;
+  }
+  > button.disabled {
+    color: rgba(0, 0, 0, 0.26);
+    cursor: default;
+  }
+}
+
+button {
+  outline: none;
+}
+
+.app-answer {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 160px;
+
+  > button.disabled {
+    display: none;
+  }
+}
+
+.close-btn {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+::ng-deep.mat-form-field-underline {
+  background-color: rgba(0, 0, 0, 0.42) !important;
+}
+
+::ng-deep.mat-form-field-label {
+  font-family: poppins;
+  font-size: 16px;
+}
+
+::ng-deep.mat-form-field-underline {
+  bottom: 27px;
+}
+
+.question ::ng-deep.mat-form-field-underline {
+  bottom: 20px;
+}
+
+.q-header {
+  ::ng-deep.mat-form-field-flex {
+    padding: 0 12px !important;
+  }
+
+  ::ng-deep.mat-form-field-infix {
+    border-top-width: 13, 0.5px !important;
+    padding: 16px 0 !important;
+  }
+  ::ng-deep.mat-form-field-appearance-outline.mat-focused
+    .mat-form-field-outline-thick {
+    color: #005ba9;
+  }
+}
+
+::ng-deep.mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+  color: #005ba9 !important;
+}
+::ng-deep.mat-form-field.mat-focused .mat-form-field-label {
+  color: #005ba9;
+}
+::ng-deep.mat-form-field.mat-form-field-invalid .mat-form-field-label {
+  color: #b00020;
+}
+
+mat-hint {
+  color: #b00020;
+  font-family: poppins;
+}
+
+::ng-deep.mat-form-field-outline-gap {
+  width: 102.75px !important;
+}
+
+.question ::ng-deep.mat-form-field-flex {
+  padding: 0 !important;
+}
+.question ::ng-deep.mat-form-field-label {
+  top: 40px !important;
+}
+.question input {
+  position: relative;
+  top: 13px;
+  font-family: "Poppins";
+}
+
+.short-text ::ng-deep.mat-form-field-infix input,
+::ng-deep.mat-form-field-infix input,
+::ng-deep.mat-form-field-infix textarea {
+  position: relative;
+  bottom: 5px;
+  font-family: "Poppins";
+}

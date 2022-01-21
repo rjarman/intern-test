@@ -1,0 +1,70 @@
+.mb-form-d {
+  padding: 24px !important;
+  h1,
+  p {
+    font-family: poppins;
+    font-size: 24px;
+  }
+  p {
+    font-size: 14px;
+  }
+  > .form1 {
+    margin-bottom: 8px;
+    padding-bottom: 12px;
+  }
+  > .form-date {
+    padding-top: 24px;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    > .date-created p,
+    > .date-updated p {
+      color: rgba(0, 0, 0, 0.87);
+      font-weight: 500;
+    }
+
+    > .date-created p:first-child,
+    > .date-updated p:first-child {
+      font-size: 12px;
+    }
+    > .date-created p:last-child,
+    > .date-updated p:last-child {
+      font-size: 14px;
+    }
+  }
+}
+
+.date-created {
+  margin-right: 64px;
+}
+
+.form-title {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  mat-icon {
+    color: rgb(0, 91, 169) !important;
+  }
+  > h1 {
+    margin: 0;
+  }
+}
+
+.mb-form-details {
+  margin-top: 24px;
+}
+
+.f-details {
+  > h1 {
+    font-size: 16px;
+    line-height: 24px;
+    color: rgba(0, 0, 0, 0.87);
+    font-family: Poppins, sans-serif;
+  }
+}
+
+.f1-details {
+  margin: 0 !important;
+  padding: 0 !important;
+}

@@ -9,6 +9,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { take } from 'rxjs/operators';
 import { CdkTextareaAutosize } from '@angular/cdk/text-field';
 import { Title } from '@angular/platform-browser';
+import { Database, ShortText } from 'src/app/type';
+import { ServerService } from 'src/app/server.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-create',
@@ -20,14 +23,25 @@ export class CreateComponent implements OnInit, AfterViewInit {
   charLeft: number;
   formDesc: HTMLTextAreaElement;
   @ViewChild('autosize') autosize: CdkTextareaAutosize;
+  formData: Database<ShortText>;
+  date: Date;
+  id = '';
+  btnName = 'Save';
+  question: string;
+  frmName = 'Add';
+  isUpdate = false;
+  childData: string;
 
   constructor(
     private titleService: Title,
     private formBuilder: FormBuilder,
-    private ngZone: NgZone
+    private ngZone: NgZone,
+    private serverService: ServerService,
+    private activatedRoute: ActivatedRoute
   ) {
     this.titleService.setTitle('ACP | Create Form');
     this.charLeft = 200;
+    this.date = new Date();
   }
 
   ngOnInit(): void {
@@ -36,6 +50,19 @@ export class CreateComponent implements OnInit, AfterViewInit {
       title: ['', Validators.required],
       desc: [''],
     });
+    this.id = this.activatedRoute.snapshot.paramMap.get('id');
+    if (this.id) {
+      this.formData = this.serverService.getData(this.id)[0];
+      this.questionForm.controls.title.setValue(this.formData.title);
+      this.questionForm.controls.desc.setValue(this.formData.description);
+      this.btnName = 'Update';
+      this.frmName = 'Update';
+      this.isUpdate = true;
+      this.question = this.formData.question.question;
+      this.titleService.setTitle('ACP | Update Form');
+    } else {
+      this.isUpdate = false;
+    }
   }
 
   ngAfterViewInit(): void {
@@ -54,5 +81,44 @@ export class CreateComponent implements OnInit, AfterViewInit {
       .subscribe(() => this.autosize.resizeToFitContent(true));
   }
 
-  save(): void {}
+  setData(data): void {
+    this.childData = data;
+  }
+
+  save(): void {
+    if (this.id) {
+      this.formData.question.question = this.childData
+        ? this.childData
+        : this.formData.question.question;
+      this.formData = {
+        id: this.formData.id,
+        title: this.questionForm.value.title,
+        description: this.questionForm.value.desc,
+        date: this.formData.date,
+        updateDate: `${this.date.getUTCDate()}-${
+          this.date.getUTCMonth() + 1
+        }-${this.date.getUTCFullYear()}`,
+        question: {
+          question: this.formData.question.question,
+        },
+      };
+      this.serverService.update(this.formData);
+    } else {
+      this.formData = {
+        id: URL.createObjectURL(new Blob([])).split('/').slice(-1)[0],
+        title: this.questionForm.value.title,
+        description: this.questionForm.value.desc,
+        date: `${this.date.getUTCDate()}-${
+          this.date.getUTCMonth() + 1
+        }-${this.date.getUTCFullYear()}`,
+        updateDate: `${this.date.getUTCDate()}-${
+          this.date.getUTCMonth() + 1
+        }-${this.date.getUTCFullYear()}`,
+        question: {
+          question: this.childData,
+        },
+      };
+      this.serverService.save(this.formData);
+    }
+  }
 }
