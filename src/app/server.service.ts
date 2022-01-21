@@ -45,15 +45,24 @@ export class ServerService {
       this.isServerSentData.next(true);
       setTimeout(() => {
         this.router.navigateByUrl('/');
-        return true;
       }, 1000);
+      setTimeout(() => {
+        location.reload();
+      }, 1100);
+      return true;
+    } else {
+      return false;
     }
-    return false;
   }
 
   logout(): void {
     this.cookieService.deleteAll();
-    this.router.navigateByUrl('/login');
+    setTimeout(() => {
+      this.router.navigateByUrl('/login');
+    }, 100);
+    setTimeout(() => {
+      location.reload();
+    }, 200);
   }
 
   fetch(): Database<
