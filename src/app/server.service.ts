@@ -19,7 +19,11 @@ import {
 export class ServerService {
   isServerSentData = new Subject<boolean>();
 
-  constructor(private router: Router, private cookieService: CookieService) {}
+  constructor(private router: Router, private cookieService: CookieService) {
+    if (!localStorage.getItem('data')) {
+      localStorage.setItem('data', JSON.stringify({ data: [] }));
+    }
+  }
 
   isUserLogin(): boolean {
     if (this.cookieService.get('_isUserLogin') === 'true') {
@@ -65,9 +69,57 @@ export class ServerService {
     }, 200);
   }
 
-  fetch(): Database<
+  fetch(
+    isLocal: boolean = false
+  ): Database<
     MultipleChoice | LinearScale | Checkbox | ShortText | FileUpload
   >[] {
-    return DATABASE;
+    if (isLocal) {
+      return DATABASE;
+    }
+    return JSON.parse(localStorage.getItem('data')).data;
+  }
+
+  save(
+    database: Database<
+      MultipleChoice | LinearScale | Checkbox | ShortText | FileUpload
+    >
+  ): void {
+    const data = JSON.parse(localStorage.getItem('data'));
+    data.data.push(database);
+    localStorage.setItem('data', JSON.stringify(data));
+    this.router.navigateByUrl('/question-builder');
+  }
+
+  update(
+    database: Database<
+      MultipleChoice | LinearScale | Checkbox | ShortText | FileUpload
+    >
+  ): void {
+    const data = JSON.parse(localStorage.getItem('data'));
+    data.data.forEach((d, idx) => {
+      if (d.id === database.id) {
+        data.data[idx] = database;
+      }
+    });
+    localStorage.setItem('data', JSON.stringify(data));
+    this.router.navigateByUrl(`/question-builder/${database.id}/details`);
+  }
+
+  getData(
+    id?: string
+  ):
+    | Database<
+        MultipleChoice | LinearScale | Checkbox | ShortText | FileUpload
+      >[]
+    | any {
+    if (id) {
+      for (const data of JSON.parse(localStorage.getItem('data')).data) {
+        if (data.id === id) {
+          return [data];
+        }
+      }
+    }
+    return JSON.parse(localStorage.getItem('data')).data;
   }
 }
