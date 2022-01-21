@@ -16,11 +16,12 @@ import {
   MAT_RIPPLE_GLOBAL_OPTIONS,
 } from '@angular/material/core';
 import { DetailsComponent } from './details/details.component';
-import { UpdateComponent } from './update/update.component';
 import { HeaderComponent } from './header/header.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 import { CardsComponent } from './cards/cards.component';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   imports: [
@@ -35,13 +36,14 @@ import { CardsComponent } from './cards/cards.component';
     ReactiveFormsModule,
     MatInputModule,
     MatRippleModule,
+    MatCheckboxModule,
+    MatSelectModule,
   ],
   declarations: [
     CreateComponent,
     TableComponent,
     AboutComponent,
     DetailsComponent,
-    UpdateComponent,
     HeaderComponent,
     SidebarComponent,
     BreadcrumbComponent,

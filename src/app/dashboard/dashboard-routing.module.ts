@@ -3,7 +3,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { CreateComponent } from './create/create.component';
 import { DetailsComponent } from './details/details.component';
 import { TableComponent } from './table/table.component';
-import { UpdateComponent } from './update/update.component';
 
 const routes: Routes = [
   {
@@ -20,7 +19,7 @@ const routes: Routes = [
   },
   {
     path: ':id/update',
-    component: UpdateComponent,
+    component: CreateComponent,
   },
 ];
 
